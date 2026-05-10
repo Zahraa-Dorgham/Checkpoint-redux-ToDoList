@@ -7,20 +7,24 @@ import { useDispatch } from 'react-redux';
 import { editTodo } from '../redux/ToDoSlice/todoslice';
 
 function EditToDo({ todo, show, handleClose }) {
-  const [title, setTitle] = useState("")
-  const [description, setDescription] = useState("")
+  const [edited, setEdited] = useState({
+    title: "",
+    description: "",
+  })
   const dispatchEvent = useDispatch()
 
   useEffect(() => {
     if (todo) {
-      setTitle(todo.title)
-      setDescription(todo.description || "")
+      setEdited({
+        title: todo.title,
+        description: todo.description || ""
+      })
     }
   }, [todo])
 
   const handleSaveEdit = () => {
-    if (todo && title.trim()) {
-      dispatchEvent(editTodo({ id: todo.id, title, description }))
+    if (todo && edited.title.trim()) {
+      dispatchEvent(editTodo({ id: todo.id, title: edited.title, description: edited.description }))
       handleClose()
     }
   }
@@ -38,8 +42,8 @@ function EditToDo({ todo, show, handleClose }) {
               type="text"
               placeholder="Edit task"
               className="form-input-custom"
-              value={title}
-              onChange={(e) => setTitle(e.target.value)}
+              value={edited.title}
+              onChange={(e) => setEdited({... edited, title: e.target.value})}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -49,8 +53,8 @@ function EditToDo({ todo, show, handleClose }) {
               rows={3}
               placeholder="Edit description"
               className="form-input-custom"
-              value={description}
-              onChange={(e) => setDescription(e.target.value)}
+              value={edited.description}
+              onChange={(e) => setEdited({... edited, description: e.target.value})}
             />
           </Form.Group>
         </Form>
