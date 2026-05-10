@@ -43,7 +43,7 @@ function EditToDo({ todo, show, handleClose }) {
               placeholder="Edit task"
               className="form-input-custom"
               value={edited.title}
-              onChange={(e) => setEdited({... edited, title: e.target.value})}
+              onChange={(e) => setEdited({ ...edited, title: e.target.value })}
             />
           </Form.Group>
           <Form.Group className="mb-3">
@@ -54,7 +54,7 @@ function EditToDo({ todo, show, handleClose }) {
               placeholder="Edit description"
               className="form-input-custom"
               value={edited.description}
-              onChange={(e) => setEdited({... edited, description: e.target.value})}
+              onChange={(e) => setEdited({ ...edited, description: e.target.value })}
             />
           </Form.Group>
         </Form>
