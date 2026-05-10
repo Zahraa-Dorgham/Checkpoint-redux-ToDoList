@@ -7,11 +7,11 @@
 }
 
 .todo-app {
-  width: min(100%, 430px);
+  width: min(100%, 1200px);
   background: #fbfbfb;
   border-radius: 18px;
   box-shadow: 0 18px 45px rgba(36, 55, 77, 0.14);
-  padding: 20px 14px 24px;
+  padding: 34px 28px 38px;
 }
 
 .todo-header {
@@ -44,9 +44,9 @@
 }
 
 .add-todo {
-  height: 46px;
+  height: 56px;
   display: grid;
-  grid-template-columns: 1fr 96px;
+  grid-template-columns: 1fr 120px;
   background: #ffffff;
   border-radius: 999px;
   box-shadow: 0 5px 14px rgba(53, 68, 84, 0.14);
@@ -60,7 +60,7 @@
   min-width: 0;
   padding: 0 20px;
   color: #3f3f3f;
-  font-size: 15px;
+  font-size: 17px;
   font-weight: 600;
 }
 
@@ -75,7 +75,7 @@
   background: #ed5a51;
   color: #ffffff;
   font-weight: 800;
-  font-size: 15px;
+  font-size: 17px;
 }
 
 .filters {
@@ -90,9 +90,9 @@
   background: #ffffff;
   color: #6c737b;
   border-radius: 999px;
-  min-height: 36px;
+  min-height: 42px;
   padding: 0 10px;
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 800;
 }
 
@@ -109,9 +109,9 @@
 }
 
 .todo-item {
-  min-height: 42px;
+  min-height: 52px;
   display: grid;
-  grid-template-columns: 34px 1fr auto;
+  grid-template-columns: 44px 1fr auto;
   align-items: center;
   gap: 8px;
   background: #dce3e8;
@@ -124,8 +124,8 @@
 }
 
 .status-btn {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   border: 2px solid #e88b8b;
   background: transparent;
@@ -138,13 +138,13 @@
 
 .todo-item.done .status-btn::after {
   content: "";
-  width: 8px;
-  height: 5px;
+  width: 10px;
+  height: 6px;
   border-left: 2px solid #ffffff;
   border-bottom: 2px solid #ffffff;
   position: absolute;
-  top: 5px;
-  left: 4px;
+  top: 6px;
+  left: 5px;
   transform: rotate(-45deg);
 }
 
@@ -152,7 +152,7 @@
   color: #3d3d3d;
   min-width: 0;
   overflow-wrap: anywhere;
-  font-size: 16px;
+  font-size: 19px;
   font-weight: 800;
   text-align: center;
   cursor: pointer;
@@ -170,8 +170,8 @@
 }
 
 .todo-actions button {
-  width: 30px;
-  height: 30px;
+  width: 36px;
+  height: 36px;
   border: 0;
   border-radius: 50%;
   background: transparent;
@@ -185,8 +185,8 @@
 }
 
 .todo-actions svg {
-  width: 18px;
-  height: 18px;
+  width: 21px;
+  height: 21px;
   fill: none;
   stroke: currentColor;
   stroke-width: 2;
