@@ -3,25 +3,32 @@ import { createSlice } from '@reduxjs/toolkit'
 const initialState = {
     todoList: [
         {
-            id: 1,
+            id: Math.random(),
             title: "Web Design Task",
+            description: "Create the layout and choose the main colors.",
             isDone: false,
         },
         {
-            id: 2,
-            title: "Web Development Task",
+        
+            id: Math.random(),
+            title: "Prepare PFE Report",
+            description: "Write and organize the final year project report, including introduction,design, and implementation sections.",
             isDone: false,
+        
         },
         {
-            id: 3,
+            id: Math.random(),
             title: "Social Media Marketing",
+            description: "Prepare content for the next campaign.",
             isDone: true,
         },
         {
-            id: 4,
-            title: "Learn JavaScript",
+            id: Math.random(),
+            title: "Morning routine",
+            description: "Wake up, brush teeth, and have breakfast.",
             isDone: false,
         },
+
     ],
     filter: "all",
 }
@@ -31,12 +38,14 @@ export const ToDoSlice = createSlice({
     initialState,
     reducers: {
         addTodo: (state, action) => {
-            const title = action.payload.trim()
+            const title = action.payload.title.trim()
+            const description = (action.payload.description || "").trim()
 
             if (title) {
                 state.todoList.unshift({
-                    id: Date.now(),
+                    id: Math.random(),
                     title,
+                    description,
                     isDone: false,
                 })
             }
@@ -56,6 +65,7 @@ export const ToDoSlice = createSlice({
 
             if (todo) {
                 todo.title = action.payload.title.trim()
+                todo.description = (action.payload.description || "").trim()
             }
         },
         setFilter: (state, action) => {

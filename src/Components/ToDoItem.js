@@ -18,9 +18,10 @@ function ToDoItem({ todo }) {
         >
         </button>
 
-        <span className="todo-title" onClick={() => setShowEdit(true)}>
-          {todo.title}
-        </span>
+        <div className="todo-content" onClick={() => setShowEdit(true)}>
+          <span className="todo-title">{todo.title}</span>
+          {todo.description && <span className="todo-description">{todo.description}</span>}
+        </div>
 
         <div className="todo-actions">
           <button type="button" onClick={() => setShowEdit(true)} aria-label="Edit task">
