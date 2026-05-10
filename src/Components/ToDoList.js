@@ -46,11 +46,7 @@ function ToDoList() {
       </div>
 
       <div className="todo-list">
-        {filteredTodos.length > 0 ? (
-          filteredTodos.map((todo) => <ToDoItem key={todo.id} todo={todo} />)
-        ) : (
-          <p className="empty-message">No task found</p>
-        )}
+        {filteredTodos.length > 0 && filteredTodos.map((todo) => <ToDoItem el={todo.id} todo={todo} />)}
       </div>
     </>
   )
