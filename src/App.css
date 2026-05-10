@@ -1,0 +1,247 @@
+.App {
+  min-height: 100vh;
+  background: #eaf1f8;
+  display: flex;
+  justify-content: center;
+  padding: 28px 16px;
+}
+
+.todo-app {
+  width: min(100%, 430px);
+  background: #fbfbfb;
+  border-radius: 18px;
+  box-shadow: 0 18px 45px rgba(36, 55, 77, 0.14);
+  padding: 20px 14px 24px;
+}
+
+.todo-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 18px;
+}
+
+.todo-header h1 {
+  color: #4b4b4b;
+  font-size: 34px;
+  font-weight: 800;
+  line-height: 1;
+  margin: 0;
+}
+
+.header-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 3px solid #f2cc72;
+  background: #ffffff;
+  color: #e9574f;
+  display: grid;
+  place-items: center;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.add-todo {
+  height: 46px;
+  display: grid;
+  grid-template-columns: 1fr 96px;
+  background: #ffffff;
+  border-radius: 999px;
+  box-shadow: 0 5px 14px rgba(53, 68, 84, 0.14);
+  overflow: hidden;
+  margin-bottom: 14px;
+}
+
+.add-todo input {
+  border: 0;
+  outline: 0;
+  min-width: 0;
+  padding: 0 20px;
+  color: #3f3f3f;
+  font-size: 15px;
+  font-weight: 600;
+}
+
+.add-todo input::placeholder {
+  color: #b4b4b4;
+  font-style: italic;
+  font-weight: 600;
+}
+
+.add-todo button {
+  border: 0;
+  background: #ed5a51;
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 15px;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+  margin: 0 2px 14px;
+}
+
+.filters button {
+  border: 1px solid #dde5ec;
+  background: #ffffff;
+  color: #6c737b;
+  border-radius: 999px;
+  min-height: 36px;
+  padding: 0 10px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.filters button.active {
+  border-color: #ed5a51;
+  background: #fff1f0;
+  color: #ed5a51;
+}
+
+.todo-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.todo-item {
+  min-height: 42px;
+  display: grid;
+  grid-template-columns: 34px 1fr auto;
+  align-items: center;
+  gap: 8px;
+  background: #dce3e8;
+  border-radius: 999px;
+  padding: 5px 8px;
+}
+
+.todo-item.done {
+  opacity: 0.62;
+}
+
+.status-btn {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #e88b8b;
+  background: transparent;
+  position: relative;
+}
+
+.todo-item.done .status-btn {
+  background: #e88b8b;
+}
+
+.todo-item.done .status-btn::after {
+  content: "";
+  width: 8px;
+  height: 5px;
+  border-left: 2px solid #ffffff;
+  border-bottom: 2px solid #ffffff;
+  position: absolute;
+  top: 5px;
+  left: 4px;
+  transform: rotate(-45deg);
+}
+
+.todo-title {
+  color: #3d3d3d;
+  min-width: 0;
+  overflow-wrap: anywhere;
+  font-size: 16px;
+  font-weight: 800;
+  text-align: center;
+  cursor: pointer;
+}
+
+.todo-item.done .todo-title {
+  color: #777777;
+  text-decoration: line-through;
+}
+
+.todo-actions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.todo-actions button {
+  width: 30px;
+  height: 30px;
+  border: 0;
+  border-radius: 50%;
+  background: transparent;
+  color: #1f2429;
+  display: grid;
+  place-items: center;
+}
+
+.todo-actions button:hover {
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.todo-actions svg {
+  width: 18px;
+  height: 18px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.empty-message {
+  color: #878f96;
+  font-weight: 700;
+  text-align: center;
+  margin: 20px 0 6px;
+}
+
+.modal-custom .modal-content {
+  border: 0;
+  border-radius: 14px;
+}
+
+.modal-title-custom {
+  color: #3e454c;
+  font-weight: 800;
+}
+
+.form-label-custom {
+  color: #5e6870;
+  font-weight: 700;
+}
+
+.form-input-custom:focus {
+  border-color: #ed5a51;
+  box-shadow: 0 0 0 0.2rem rgba(237, 90, 81, 0.16);
+}
+
+.modal-btn-save {
+  background: #ed5a51;
+  border-color: #ed5a51;
+}
+
+.modal-btn-save:hover,
+.modal-btn-save:focus {
+  background: #d94941;
+  border-color: #d94941;
+}
+
+@media (max-width: 420px) {
+  .todo-header h1 {
+    font-size: 28px;
+  }
+
+  .add-todo {
+    grid-template-columns: 1fr 78px;
+  }
+
+  .todo-title {
+    font-size: 14px;
+  }
+}
